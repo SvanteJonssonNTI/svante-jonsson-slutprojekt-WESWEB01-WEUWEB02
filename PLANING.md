@@ -4,7 +4,7 @@
 - NodeJS (Backend, serverside)
 - EJS (Server Side Rendering)
 - VUEJS (Frontend, User Interface)
-- - Bootstrap (Frontend, Styling)
+- Bootstrap (Frontend, Styling)
 - MongoDB (Databas)
 
 ## Databasens innehåll
