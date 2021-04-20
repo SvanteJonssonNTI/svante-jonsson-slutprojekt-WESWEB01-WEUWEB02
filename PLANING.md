@@ -46,10 +46,9 @@ dator https://wireframe.cc/dOVhKD
 
 ### Målgrupp
 - Kön: Kvinnor och män (främst kvinnor)
-- Ålder: Mellan 20 och 45 år
-- Pengasituation: Genomsnittlig lön
-- Bostadsituation: Har egen bostad
+- Ålder: Mellan 20 och 55 år
+- Vill enkelt kunna köpa doftljus hemmifrån
 
 ### Persona
-#### Maria 
-Hon är en kvinna i 35 år åldern med en genomsnittlig lön. Själv har hon två barn och en villa. Hon älskar doftljus eftersom dem är ett lätt sätt att få hennes hus att luckta gott, men hon vill ha tid att spendera med sina barn. Därför vill hon kunna köpa doftljus snabbt fort och lätt online. 
+#### Maria 35
+Efter en lång arbetsvecka vill Maria komma hem till ett trevligt hem där hon kan slappna av. En viktig grej för att henne är att det ska lukta gott, och efter en lång arbetsvecka vill hon snabbt fort och lätt kunna beställa doftljus hemmifrån så hon slipper åka till affären.
