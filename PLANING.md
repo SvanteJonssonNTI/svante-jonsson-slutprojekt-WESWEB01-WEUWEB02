@@ -37,6 +37,8 @@ Databasens uppgift är alltså att hålla koll alla tillgängliga produkter och 
 ## Wireframes
 
 ### Startsida
+telefon https://wireframe.cc/s51UGT
+dator https://wireframe.cc/dOVhKD
 
 ### osv
 
