@@ -21,6 +21,7 @@ Databasens uppgift är alltså att hålla koll alla tillgängliga produkter och 
 -
 
 ## Platsstruktur
+<img src="./planingFiles/flowchart.png">
 
 ## Sekvensdiagram
 
