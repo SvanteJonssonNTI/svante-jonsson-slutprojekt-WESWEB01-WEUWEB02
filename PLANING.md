@@ -25,8 +25,13 @@ Databasens uppgift är alltså att hålla koll alla tillgängliga produkter och 
 ## Sekvensdiagram
 
 ### Registrering/Inloggning
+<img src="./planingFiles/Login_Register.png">
 
-### osv
+### Shopping upplevelsen
+<img src="./planingFiles/shopping_experience.png">
+
+### Registrera sig för nyhetsbrevet
+<img src="./planingFiles/Newsletter_signup.png">
 
 ## Wireframes
 
