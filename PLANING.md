@@ -38,3 +38,9 @@ Databasens uppgift är alltså att hålla koll alla tillgängliga produkter och 
 ### Startsida
 
 ### osv
+
+## Målgrupp & Persona 
+
+### Målgrupp
+
+###Persona
