@@ -1,4 +1,4 @@
-# Webbshop för doftljus (ämne kan ändras)
+# Webbshop för doftljus
 
 ## Tekniken 
 - NodeJS (Backend, serverside)
@@ -8,7 +8,10 @@
 - MongoDB (Databas)
 
 ## Databasens innehåll
--
+- Användare
+- Produkter (pris, antal på lager, osv)
+
+Databasens uppgift är alltså att hålla koll alla tillgängliga produkter och hur deras status är. Alla skapade användarkonton kommer också att sparas här.
 
 ## Färgschema & Typsnitt
 ### Färger
@@ -19,16 +22,13 @@
 
 ## Platsstruktur
 
+## Sekvensdiagram
 
-## Klassdiagram
-
-## Wireframes
-
-### Startsida
+### Registrering/Inloggning
 
 ### osv
 
-## Mockups
+## Wireframes
 
 ### Startsida
 
