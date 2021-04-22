@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const db = require('./dbModule')
+
+//Connection to database
+db.connectToMongoose('webshop')
 
 //SET
 app.set('view engine', 'ejs');
