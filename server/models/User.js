@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-//Creates the UserSchema and exports it
+//Creates the UserSchema
 const UserSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -14,11 +14,13 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
-exports.createUser = (emailINPUT, passwordINPUT) => {
+//Function creates a new user
+exports.createUser = (emailIN, passwordIN) => {
     return new User({
-        email: emailINPUT,
-        password: passwordINPUT,
+        email: emailIN,
+        password: passwordIN,
     })
 }
 
+//Exports a User
 module.exports = User;

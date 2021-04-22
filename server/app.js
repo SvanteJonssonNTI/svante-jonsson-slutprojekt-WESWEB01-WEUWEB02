@@ -14,4 +14,4 @@ app.get("/", (req, res) => {
     res.render('pages/index')
   });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Server listening on port ${port}!\nAccess the site on http://localhost:${port}`))
