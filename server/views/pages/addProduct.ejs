@@ -10,11 +10,11 @@
     <form action="/addProduct" method="POST">
         <div>
           <label for="name">Namn</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" maxlength="15" required>
         </div>
         <div>
           <label for="description">Beskrivning</label>
-          <input type="text" id="description" name="description" required>
+          <input type="text" id="description" name="description" maxlength="300" required>
         </div>
         <div>
             <label for="imgURL">Bild URL</label>

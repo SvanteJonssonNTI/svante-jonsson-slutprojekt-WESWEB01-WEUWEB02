@@ -30,25 +30,28 @@ app.get("/", loginRegister.checkAuthenticated, (req, res) => {
   res.render("pages/index");
 });
 
-app.get("/add", (req, res) => {
+app.get("/addProduct", (req, res) => {
   res.render("pages/addProduct");
 });
 
 //POST
 app.post("/addProduct", (req, res) => {
+    checkedName = addProduct.checkText(req.body.name, 15)
+    checkedDescription = addProduct.checkText(req.body.description, 300)
+    checkedURL = addProduct.checkImgURL(req.body.imgURL)
     checkedPrice = addProduct.checkPrice(req.body.price)
-    if(checkedPrice == -1){
-      console.log("invalid price")
-      res.redirect("/add")
+    checkedStock = addProduct.checkStock(req.body.stock)
+    if(checkedName == -1 || checkedDescription == -1 /*|| checkedURL == -1 */|| checkedPrice == -1 || checkedStock == -1){
+      console.log(`invalid input`)
+      res.redirect("/addProduct")
     } else{
-      console.log("saved")
       db.saveToMongoose(
         addProduct.createProduct(
-          req.body.name,
+          checkedName,
           req.body.description,
-          req.body.imgURL,
-          req.body.price,
-          req.body.stock
+          checkedURL,
+          checkedPrice,
+          checkedStock
         )
       )
     }
