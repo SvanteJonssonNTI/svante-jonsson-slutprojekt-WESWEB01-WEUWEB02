@@ -4,10 +4,10 @@ const express = require("express");
 //Local Dependecies
 const db = require("./dbModule");
 const User = require("./models/User");
-const Product = require("./models/Product")
+const Product = require("./models/Product");
 const loginRegister = require("./loginRegister");
-const addProduct = require("./addProduct")
-const userCart = require("./userCart")
+const addProduct = require("./addProduct");
+const userCart = require("./userCart");
 const passport = require("./passport");
 
 //Variable Initialize
@@ -28,8 +28,8 @@ app.use(express.urlencoded({ extended: false }));
 
 //GET
 app.get("/", loginRegister.checkAuthenticated, async (req, res) => {
-  let user = await req.user
-  userCart.addProductToCart(user._id, "name", 5)
+  let user = await req.user;
+  userCart.addProductToCart(user._id, "name", 5);
   res.render("pages/index");
 });
 
@@ -39,25 +39,30 @@ app.get("/addProduct", (req, res) => {
 
 //POST
 app.post("/addProduct", (req, res) => {
-    checkedName = addProduct.checkText(req.body.name, 15)
-    checkedDescription = addProduct.checkText(req.body.description, 300)
-    checkedURL = addProduct.checkImgURL(req.body.imgURL)
-    checkedPrice = addProduct.checkPrice(req.body.price)
-    checkedStock = addProduct.checkStock(req.body.stock)
-    if(checkedName == -1 || checkedDescription == -1 /*|| checkedURL == -1 */|| checkedPrice == -1 || checkedStock == -1){
-      console.log(`invalid input`)
-      res.redirect("/addProduct")
-    } else{
-      db.saveToMongoose(
-        addProduct.createProduct(
-          checkedName,
-          req.body.description,
-          checkedURL,
-          checkedPrice,
-          checkedStock
-        )
+  checkedName = addProduct.checkText(req.body.name, 15);
+  checkedDescription = addProduct.checkText(req.body.description, 300);
+  checkedURL = addProduct.checkImgURL(req.body.imgURL);
+  checkedPrice = addProduct.checkPrice(req.body.price);
+  checkedStock = addProduct.checkStock(req.body.stock);
+  if (
+    checkedName == -1 ||
+    checkedDescription == -1 /*|| checkedURL == -1 */ ||
+    checkedPrice == -1 ||
+    checkedStock == -1
+  ) {
+    console.log(`invalid input`);
+    res.redirect("/addProduct");
+  } else {
+    db.saveToMongoose(
+      addProduct.createProduct(
+        checkedName,
+        req.body.description,
+        checkedURL,
+        checkedPrice,
+        checkedStock
       )
-    }
+    );
+  }
 });
 
 //Login and Register routes
