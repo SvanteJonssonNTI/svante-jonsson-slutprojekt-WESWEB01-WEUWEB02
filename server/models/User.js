@@ -1,23 +1,31 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 //Creates the UserSchema
 const UserSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  admin: {
+    type: Boolean,
+    default: false,
+  },
+  cart: {
+    productName: {
+      type: String,
     },
-    email: {
-        type: String,
-        required: true
+    amountOfProduct: {
+      type: Number,
     },
-    password: {
-        type: String,
-        required: true
-    },
-    admin: {
-        type: Boolean,
-        default: false
-    }
+  },
 });
 
 const User = mongoose.model("User", UserSchema);

@@ -7,6 +7,7 @@ const User = require("./models/User");
 const Product = require("./models/Product")
 const loginRegister = require("./loginRegister");
 const addProduct = require("./addProduct")
+const userCart = require("./userCart")
 const passport = require("./passport");
 
 //Variable Initialize
@@ -26,7 +27,9 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
 //GET
-app.get("/", loginRegister.checkAuthenticated, (req, res) => {
+app.get("/", loginRegister.checkAuthenticated, async (req, res) => {
+  let user = await req.user
+  userCart.addProductToCart(user._id, "name", 5)
   res.render("pages/index");
 });
 
