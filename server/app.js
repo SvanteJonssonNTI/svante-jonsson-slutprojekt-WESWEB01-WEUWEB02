@@ -33,12 +33,12 @@ app.get("/", loginRegister.checkAuthenticated, async (req, res) => {
   res.render("pages/index");
 });
 
-app.get("/addProduct", (req, res) => {
+app.get("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
   res.render("pages/addProduct");
 });
 
 //POST
-app.post("/addProduct", (req, res) => {
+app.post("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
   checkedName = addProduct.checkText(req.body.name, 15);
   checkedDescription = addProduct.checkText(req.body.description, 300);
   checkedURL = addProduct.checkImgURL(req.body.imgURL);
@@ -47,6 +47,7 @@ app.post("/addProduct", (req, res) => {
   if (
     checkedName == -1 ||
     checkedDescription == -1 /*|| checkedURL == -1 */ ||
+    checkedURL == -1 ||
     checkedPrice == -1 ||
     checkedStock == -1
   ) {

@@ -36,3 +36,17 @@ exports.checkNotAuthenticated = (req, res, next) => {
   }
   next();
 };
+
+//Function to check if admin
+exports.checkIfAdmin = async (req, res, next) => {
+  let user = await req.user;
+  if (req.isAuthenticated()) {
+    if (user.admin == true) {
+      return next();
+    } else {
+      res.redirect("/");
+    }
+  } else {
+    res.redirect("/login");
+  }
+};
