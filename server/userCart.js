@@ -10,5 +10,12 @@ exports.addProductToCart = async (userID, productNameIN, amountOfProductIN) => {
 };
 
 //Function removes an item to the cart
+exports.removeItemFromCart = async (userID, productNameIN, amountOfProductIN) => {
+  let tmp = { productName: productNameIN, amountOfProduct: amountOfProductIN };
+  await User.updateOne({_id : ObjectID(userID) }, {$pull: {cart: tmp}})
+}
 
 //Function clears the cart
+exports.clearCart = async (userID) => {
+  await User.updateOne({_id : ObjectID(userID) }, {$pull: cart})
+}
