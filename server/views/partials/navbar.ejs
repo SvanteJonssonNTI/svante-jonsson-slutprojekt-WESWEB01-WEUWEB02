@@ -13,10 +13,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Produkter</a>
                 </li>
+                <% if (user && user.admin) { %>
                 <li class="nav-item">
-                    <a class="nav-link" href="/addProduct">Lägg till produkter</a>
-                    <!--Endast för admins-->
+                    <a class="nav-link" href="/addProduct">Lägg till produkter</a><!--Endast för admins-->
                 </li>
+                <% } %>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Om oss</a>
                 </li>
@@ -34,10 +35,16 @@
                     </a>
                 </li>
                 <li class="nav-item my-auto">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/login">
+                        <% if (user) { %>
                         <span class="material-icons">
-                            account_circle
-                            </span>
+                            logout
+                        </span>
+                        <% } else { %>
+                        <span class="material-icons">
+                            login
+                        </span>
+                        <% } %>
                     </a>
                 </li>
             </ul>

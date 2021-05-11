@@ -28,10 +28,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/client/"));
 
 //GET
-app.get("/", loginRegister.checkAuthenticated, async (req, res) => {
+app.get("/", async (req, res) => {
   let user = await req.user;
-  userCart.addProductToCart(user._id, "name", 5);
-  res.render("pages/index");
+  res.render("pages/index", {user: user});
 });
 
 app.get("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
