@@ -1,19 +1,20 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container-fluid d-flex">
-        <div class="col-lg-4 col-12">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="col-lg-4 col-12 d-flex justify-content-between">
             <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler d-inline d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse col-lg-4 justify-content-center" id="navbarContent">
+        <div class="collapse navbar-collapse col-sm-4 justify-content-center" id="navbarContent">
             <ul class="navbar-nav justify-content-around flex-fill">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Produkter</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Lägg till produkter</a>
+                    <a class="nav-link" href="/addProduct">Lägg till produkter</a>
                     <!--Endast för admins-->
                 </li>
                 <li class="nav-item">
@@ -21,18 +22,26 @@
                 </li>
 
             </ul>
-            
+
         </div>
-        <div class="collapse navbar-collapse col-lg-4 justify-content-center" id="navbarContent">
+        <div class="collapse navbar-collapse col-sm-4 justify-content-center" id="navbarContent">
             <ul class="navbar-nav justify-content-end flex-fill">
                 <li class="nav-item">
-                    <a class="nav-link bi bi-cart4" href="#"></a>
+                    <a class="nav-link" href="#">
+                        <span class="material-icons">
+                            shopping_cart
+                        </span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link bi bi-person-circle" href="#"></a>
+                <li class="nav-item my-auto">
+                    <a class="nav-link" href="#">
+                        <span class="material-icons">
+                            account_circle
+                            </span>
+                    </a>
                 </li>
             </ul>
         </div>
-        
+
     </div>
 </nav>
