@@ -22,6 +22,11 @@ module.exports = (function () {
     res.render("pages/register");
   });
 
+  router.get("/logout", loginRegister.checkAuthenticated, (req, res) => {
+    req.logOut();
+    res.redirect("/login");
+  });
+
   //POST
   router.post(
     "/login",
@@ -53,12 +58,6 @@ module.exports = (function () {
       }
     }
   );
-
-  //DELETE
-  router.delete("/logout", (req, res) => {
-    req.logOut();
-    res.redirect("/login");
-  });
 
   return router;
 })();
