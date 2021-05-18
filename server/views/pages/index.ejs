@@ -25,27 +25,26 @@
             <!--Card-->
             <div class="card col-3 shadow pl-0 pr-0 info-card text-center">
                 <!--Card img-->
-                <img src="./img/homeBannerDark.png" class="card-img-top">
+                <img src="./img/nedladdning.jpg" class="card-img-top w-50 mx-auto mt-2 bg-primary">
                 <!--Card body-->
                 <div class="card-body">
                     <p class="card-title font-weight-bold">SUSO Design</p>
                     <p class="card-text lh-lg">
                         cool text
                     </p>
-                    <a href="#" class="stretched-link"></a>
                     <table class="col-6 mx-auto">
                         <tbody>
                             <tr class="d-flex">
                                 <td class="flex-fill">
-                                    <a class="btn btn-danger material-icons flex-fill ms-auto">remove</a>
+                                    <a class="btn btn-danger material-icons flex-fill ms-auto" onclick="amountOf(-1)">remove</a>
                                 </td>
                                 <td class="flex-fill">
                                     <div class="d-flex flex-column align-items-center justify-content-center">
-                                        <p>1</p>
+                                        <p id="amount">1</p>
                                     </div>
                                 </td>
                                 <td class="flex-fill">
-                                    <a class="btn btn-success material-icons flex-fill me-auto">add</a>
+                                    <a class="btn btn-success material-icons flex-fill me-auto" onclick="amountOf(1)">add</a>
                                 </td>
                             </tr>
                             <tr>
@@ -62,27 +61,26 @@
             <!--Card-->
             <div class="card col-3 shadow pl-0 pr-0 info-card text-center">
                 <!--Card img-->
-                <img src="./img/homeBannerDark.png" class="card-img-top">
+                <img src="./img/nedladdning.jpg" class="card-img-top w-50 mx-auto mt-2 bg-primary">
                 <!--Card body-->
                 <div class="card-body">
                     <p class="card-title font-weight-bold">SUSO Design</p>
                     <p class="card-text lh-lg">
                         cool text
                     </p>
-                    <a href="#" class="stretched-link"></a>
                     <table class="col-6 mx-auto">
                         <tbody>
                             <tr class="d-flex">
                                 <td class="flex-fill">
-                                    <a class="btn btn-danger material-icons flex-fill ms-auto">remove</a>
+                                    <a class="btn btn-danger material-icons flex-fill ms-auto" onclick="amountOf(-1)">remove</a>
                                 </td>
                                 <td class="flex-fill">
                                     <div class="d-flex flex-column align-items-center justify-content-center">
-                                        <p>1</p>
+                                        <p id="amount">1</p>
                                     </div>
                                 </td>
                                 <td class="flex-fill">
-                                    <a class="btn btn-success material-icons flex-fill me-auto">add</a>
+                                    <a class="btn btn-success material-icons flex-fill me-auto" onclick="amountOf(1)">add</a>
                                 </td>
                             </tr>
                             <tr>
@@ -99,27 +97,26 @@
             <!--Card-->
             <div class="card col-3 shadow pl-0 pr-0 info-card text-center">
                 <!--Card img-->
-                <img src="./img/homeBannerDark.png" class="card-img-top">
+                <img src="./img/nedladdning.jpg" class="card-img-top w-50 mx-auto mt-2 bg-primary">
                 <!--Card body-->
                 <div class="card-body">
                     <p class="card-title font-weight-bold">SUSO Design</p>
                     <p class="card-text lh-lg">
                         cool text
                     </p>
-                    <a href="#" class="stretched-link"></a>
                     <table class="col-6 mx-auto">
                         <tbody>
                             <tr class="d-flex">
                                 <td class="flex-fill">
-                                    <a class="btn btn-danger material-icons flex-fill ms-auto">remove</a>
+                                    <a class="btn btn-danger material-icons flex-fill ms-auto" onclick="amountOf(-1, this)">remove</a>
                                 </td>
                                 <td class="flex-fill">
                                     <div class="d-flex flex-column align-items-center justify-content-center">
-                                        <p>1</p>
+                                        <p id="amount">1</p>
                                     </div>
                                 </td>
                                 <td class="flex-fill">
-                                    <a class="btn btn-success material-icons flex-fill me-auto">add</a>
+                                    <a class="btn btn-success material-icons flex-fill me-auto" onclick="amountOf(1, this)">add</a>
                                 </td>
                             </tr>
                             <tr>
@@ -134,5 +131,12 @@
                 </div>
             </div>
 </body>
+<script>
+    function amountOf(input, element){
+        amount = element.parentElement.parentElement.children[1].children[0].children[0]
+        if(parseInt(amount.innerHTML) == null || parseInt(amount.innerHTML) <= 0 && input == -1)return null
+        amount.innerHTML = parseInt(amount.innerHTML) + input
+    }
+</script>
 
 </html>
