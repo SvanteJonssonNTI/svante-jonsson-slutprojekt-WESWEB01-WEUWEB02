@@ -16,6 +16,11 @@ exports.createProduct = (nameIN, descriptionIN, imgURLIN, priceIN, stockIN) => {
     })
 }
 
+//Function gets all products from database
+exports.getAllFromDB = async () => {
+    return await Product.find()
+}
+
 //Function checks if price is valid
 exports.checkPrice = (priceIN) => {
     if(isNumber(priceIN)){ //checks if input is a integer
