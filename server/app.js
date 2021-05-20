@@ -3,10 +3,8 @@ const express = require("express");
 
 //Local Dependecies
 const db = require("./dbModule");
-const User = require("./models/User");
-const Product = require("./models/Product");
 const loginRegister = require("./loginRegister");
-const addProduct = require("./addProduct");
+const products = require("./product");
 const userCart = require("./userCart");
 const passport = require("./passport");
 
@@ -30,7 +28,7 @@ app.use(express.static(__dirname + "/client/"));
 //GET
 app.get("/", async (req, res) => {
   let user = await req.user;
-  res.render("pages/index", {user: user});
+  res.render("pages/index", {user: user, products: await products.getAllFromDB()});
 });
 
 app.get("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
@@ -39,11 +37,11 @@ app.get("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
 
 //POST
 app.post("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
-  checkedName = addProduct.checkText(req.body.name, 15);
-  checkedDescription = addProduct.checkText(req.body.description, 300);
-  checkedURL = addProduct.checkImgURL(req.body.imgURL);
-  checkedPrice = addProduct.checkPrice(req.body.price);
-  checkedStock = addProduct.checkStock(req.body.stock);
+  checkedName = products.checkText(req.body.name, 15);
+  checkedDescription = products.checkText(req.body.description, 300);
+  checkedURL = products.checkImgURL(req.body.imgURL);
+  checkedPrice = products.checkPrice(req.body.price);
+  checkedStock = products.checkStock(req.body.stock);
   if (
     checkedName == -1 ||
     checkedDescription == -1 /*|| checkedURL == -1 */ ||
@@ -55,7 +53,7 @@ app.post("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
     res.redirect("/addProduct");
   } else {
     db.saveToMongoose(
-      addProduct.createProduct(
+      products.createProduct(
         checkedName,
         req.body.description,
         checkedURL,
