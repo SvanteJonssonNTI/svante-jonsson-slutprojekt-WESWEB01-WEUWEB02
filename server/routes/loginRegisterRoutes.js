@@ -14,8 +14,9 @@ module.exports = (function () {
   //ROUTES
 
   //GET
-  router.get("/login", loginRegister.checkNotAuthenticated, (req, res) => {
-    res.render("pages/login");
+  router.get("/login", loginRegister.checkNotAuthenticated, async (req, res) => {
+    let user = await req.user;
+    res.render("pages/login", {user: user});
   });
 
   router.get("/register", loginRegister.checkNotAuthenticated, (req, res) => {
