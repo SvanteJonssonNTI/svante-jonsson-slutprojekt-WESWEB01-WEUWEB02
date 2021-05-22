@@ -31,8 +31,9 @@ app.get("/", async (req, res) => {
   res.render("pages/index", {user: user, products: await products.getAllFromDB()});
 });
 
-app.get("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
-  res.render("pages/addProduct");
+app.get("/addProduct", loginRegister.checkIfAdmin, async (req, res) => {
+  let user = await req.user;
+  res.render("pages/addProduct", {user: user});
 });
 
 //POST
