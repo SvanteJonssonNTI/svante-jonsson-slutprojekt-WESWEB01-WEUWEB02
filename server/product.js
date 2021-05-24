@@ -4,6 +4,7 @@ const Product = require("./models/Product")
 //Imported Dependencies
 const isNumber = require('is-number')
 const fs = require("fs")
+const ObjectID = require("mongodb").ObjectID;
 
 //Function creates a new product
 exports.createProduct = (nameIN, descriptionIN, imgURLIN, priceIN, stockIN) => {
@@ -19,6 +20,11 @@ exports.createProduct = (nameIN, descriptionIN, imgURLIN, priceIN, stockIN) => {
 //Function gets all products from database
 exports.getAllFromDB = async () => {
     return await Product.find()
+}
+
+//Function gets one product from database
+exports.getByID = async (id) => {
+    return await Product.findOne({_id: ObjectID(id)})
 }
 
 //Function checks if price is valid
