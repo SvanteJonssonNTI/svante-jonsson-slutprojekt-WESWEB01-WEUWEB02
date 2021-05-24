@@ -20,13 +20,14 @@
                         class="img-fluid"
                     />
                 </div>
-                <div class="col-10 col-md-6 bg-secondary card">
-                    <div class="card-body">
+                <div class="col-10 col-md-6 bg-secondary card d-flex flex-column align-items-start">
+                    <div class="card-body bg-danger">
                         <h1 class="card-title"><%= product.name %></h1>
                         <div class="card-subtitle">
                             <b> <%= product.price %> kr </b>
                         </div>
                         <div class="card-text"><%= product.description %></div>
+                        <div class="cart-text text-muted">Antal i lager: <%= product.stock %> </div>
                     </div>
                 </div>
             </div>
