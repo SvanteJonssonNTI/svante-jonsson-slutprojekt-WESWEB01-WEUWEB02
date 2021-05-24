@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <%= product.name %> 
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <%- include('../partials/globalImports.ejs') %>
+    </head>
+    <body>
+        <%- include('../partials/navbar.ejs') %>
+
+        <div class="container">
+            <div class="row bg-danger justify-content-center">
+                <div class="col-10 col-md-6 bg-primary">
+                    <img
+                        src="<%= product.imgURL %> "
+                        alt="Product Image"
+                        class="img-fluid"
+                    />
+                </div>
+                <div class="col-10 col-md-6 bg-secondary card">
+                    <div class="card-body">
+                        <h1 class="card-title"><%= product.name %></h1>
+                        <div class="card-subtitle">
+                            <b> <%= product.price %> kr </b>
+                        </div>
+                        <div class="card-text"><%= product.description %></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
