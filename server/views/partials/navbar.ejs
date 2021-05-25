@@ -49,18 +49,22 @@
         Din Kundvagn:
     </p>
     <ol class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <div class="ms-2 me-auto">
-                <div class="fw-bold">Blablabla Ljus</div>
-                Antal: 
-            </div>
-            <div class="d-flex justify-content-around align-items-center w-25">
-                <span class="fs-6">14 SEK</span>
-                <span class="material-icons btn btn-outline-danger ms-1">
-                    delete
-                </span>
-            </div>
-        </li>
+<% user.cart.toJSON().forEach(item => { %>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="ms-2 me-auto">
+            <div class="fw-bold"><%- item.productName %></div>
+            Antal: <%- item.amountOfProduct %>
+        </div>
+        <div class="d-flex justify-content-around align-items-center w-25">
+            <span class="fs-6">14 SEK</span>
+            <span class="material-icons btn btn-outline-danger ms-1">
+                delete
+            </span>
+        </div>
+    </li>
+<% }) %>
+
+        
     </ol>
     <div class="d-flex justify-content-end mt-3">
         <a href="#" class="btn btn-outline-danger me-3">Töm kundvagnen</a>
