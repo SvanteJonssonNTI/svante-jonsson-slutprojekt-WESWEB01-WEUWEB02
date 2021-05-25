@@ -57,7 +57,8 @@ app.post("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
   checkedStock = products.checkStock(req.body.stock);
   if (
     checkedName == -1 ||
-    checkedDescription == -1 /*|| checkedURL == -1 */ ||
+    checkedDescription == -1 || 
+    checkedURL == -1 ||
     checkedURL == -1 ||
     checkedPrice == -1 ||
     checkedStock == -1
