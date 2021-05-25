@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "populate": "node populateDatabase.js"
   },
   "keywords": [],
   "author": "",

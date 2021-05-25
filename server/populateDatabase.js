@@ -1,3 +1,3 @@
-const addProduct = require("./addProduct");
+const product = require("./product");
 
-addProduct.createProduct()
+//addProduct.createProduct()
