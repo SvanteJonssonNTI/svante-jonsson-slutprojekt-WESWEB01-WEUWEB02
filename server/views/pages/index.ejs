@@ -23,8 +23,8 @@
         </p>
     </div>
 
-
-    <h1>Populära produkter</h1>
+    <div class="my-3 mx-3">
+        <h1>Populära produkter</h1>
     <div class="row d-flex justify-content-around mx-auto">
         <% for( let i = 0; i < products.length; i++ ) { %>
             <% if (i%1 == 0) { %>
@@ -71,8 +71,9 @@
             </div>
         </div>
         <% } %>
-
     </div>
+    </div>
+    
 </body>
 <script>
     function amountOf(input, element) {
