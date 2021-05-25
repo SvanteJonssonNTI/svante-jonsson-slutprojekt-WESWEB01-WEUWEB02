@@ -8,11 +8,22 @@
     <title>Document</title>
 
 	<%- include('../partials/globalImports.ejs') %> 
+    <link rel="stylesheet" href="style/jumbotron.css">
     
 </head>
 
 <body>
     <%- include('../partials/navbar.ejs') %>
+    <div class="jumbotron mx-auto d-flex flex-column justify-content-center text-white p-5">
+        <h1 class="display-2 ps-5">
+            Naturliga ljus
+        </h1>
+        <p class="display-5 ms-5">
+            Doftljus just för dig, lufrenande och snygga.
+        </p>
+    </div>
+
+
     <h1>Populära produkter</h1>
     <div class="row d-flex justify-content-around mx-auto">
         <% for( let i = 0; i < products.length; i++ ) { %>
