@@ -56,8 +56,9 @@ exports.checkStock = (stockIN) => {
 
 //Function checks if imgURL is valid
 exports.checkImgURL = (imgURL) => {
-    const url = `/img/${imgURL}`
-    if(fs.existsSync(url)) return url
+    const url = `./client/img/${imgURL}`
+    console.log(fs.existsSync(url))
+    if(fs.existsSync(url)) return `/img/${imgURL}`
     return -1 //If url is invalid, -1 is returned to indicate a bad url
 }
 
