@@ -15,10 +15,10 @@ Databasens uppgift är alltså att hålla koll alla tillgängliga produkter och 
 
 ## Färgschema & Typsnitt
 ### Färger
--
+- Lungna och mysiga färger (lila, osv)
 
 ### Typsnitt
--
+- Moderna och simpla
 
 ## Platsstruktur
 <img src="./planingFiles/flowchart.png">
