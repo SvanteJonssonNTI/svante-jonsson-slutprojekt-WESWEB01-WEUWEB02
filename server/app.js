@@ -36,6 +36,12 @@ app.get("/addProduct", loginRegister.checkIfAdmin, async (req, res) => {
   res.render("pages/addProduct", {user: user});
 });
 
+app.get("/products", async (req, res) => {
+  let user = await req.user;
+  let allProducts = await products.getAllFromDB();
+  res.render("pages/products", {user: user, products: allProducts});
+})
+
 app.get("/product", async (req, res) => {
   let user = await req.user;
   let product = await products.getByID(req.query.product)
