@@ -1,0 +1,16 @@
+.popover{
+    max-width: 30vw !important;
+}
+.popover-body{
+    
+    width: 30vw !important;
+}
+@media only screen and (max-width: 576px) {
+    .popover{
+    max-width: 95vw !important;
+    }
+    .popover-body{
+        
+        width: 95vw !important;
+    }
+}

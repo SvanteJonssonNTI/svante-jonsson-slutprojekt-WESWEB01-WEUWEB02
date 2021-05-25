@@ -7,38 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="style/main.css">
-
     <%- include('../partials/globalImports.ejs') %>
 </head>
 
 <body>
-    <a type="button" class="btn btn-lg btn-danger" id="btn-action">Click to toggle popover</a>
+    <a tabindex="0" class="btn btn-lg btn-danger" id="btn-popover" role="button" data-bs-toggle="popover" data-bs-trigger="focus" >Dismissible popover</a>
     <div id="popover-content" hidden>
-
-        <ol class="list-group list-group-numbered">
-            <li class="list-group-item d-flex justify-content-between align-items-start">
+        <p class="fs-3">
+            Din Kundvagn:
+        </p>
+        <ol class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
                 <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Cras justo odio
+                    <div class="fw-bold">Blablabla Ljus</div>
+                    Antal: 
                 </div>
-                <span class="badge bg-primary rounded-pill">14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Cras justo odio
+                <div class="d-flex justify-content-around align-items-center w-25">
+                    <span class="fs-6">14 SEK</span>
+                    <span class="material-icons btn btn-outline-danger ms-1">
+                        delete
+                    </span>
                 </div>
-                <span class="badge bg-primary rounded-pill">14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Cras justo odio
-                </div>
-                <span class="badge bg-primary rounded-pill">14</span>
             </li>
         </ol>
+        <div class="d-flex justify-content-end mt-3">
+            <a href="#" class="btn btn-outline-danger me-3">Töm kundvagnen</a>
+            <a href="#" class="btn btn-success">Betala</a>
+        </div>
     </div>
 </body>
 
