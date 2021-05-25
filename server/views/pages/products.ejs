@@ -13,12 +13,12 @@
 <body>
     <%- include('../partials/navbar.ejs') %>
 
-    <div class="container">
+    <div class="container my-5">
         <div class="row">
-            <div class="container">
-                <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 w-50">
+            <div class="container d-flex justify-content-center">
+                <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 col-11 col-md-7">
                     <div class="input-group">
-                        <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                        <input type="search" placeholder="Vad önskas?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
                         <div class="input-group-append">
                             <button id="button-addon1" type="submit" class="btn btn-link text-decoration-none d-flex justify-content-center align-items-center">
                                 <span class="material-icons text-muted">
@@ -30,7 +30,29 @@
                 </div>
             </div>
             <div class="w-100"></div>
-            <div class="container">bre</div>
+            <div class="row justify-content-center flex-wrap">
+                <% for( let i = 0; i < products.length; i++ ) { %>
+
+
+                    <!--Card-->
+                    <div class="card col-8 col-md-3 shadow pl-0 pr-0 info-card text-center mx-3 my-3">
+                        <!--Card img-->
+                        <img src="./img/nedladdning.jpg" class="card-img-top w-75 mx-auto mt-2 bg-primary">
+                        <!--Card body-->
+                        <div class="card-body">
+                            <p class="card-title fw-bold"><%= products[i].name %> </p>
+                            <p class="card-text"><%= products[i].price %> SEK </p>
+                            <a href="/product?product=<%- products[i]._id %> " class="btn btn-danger stretched-link d-flex align-items-center justify-content-center">
+                                <span class="material-icons me-1">
+                                    shopping_cart
+                                </span>
+                                Lägg i kundvagn
+                            </a>
+                            
+                        </div>
+                    </div>
+                <% } %>
+            </div>
         </div>
     </div>
 </body>
