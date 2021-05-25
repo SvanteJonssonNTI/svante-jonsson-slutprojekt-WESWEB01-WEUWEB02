@@ -6,7 +6,3 @@ var popover = new bootstrap.Popover(popoverBtn, {
   container: 'body',
   content: document.getElementById("popover-content").innerHTML
 });
-
-var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
-  trigger: 'focus'
-})
