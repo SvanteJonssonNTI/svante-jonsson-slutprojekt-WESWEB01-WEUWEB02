@@ -82,6 +82,11 @@ app.post("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
   }
 });
 
+app.post("/addToCart", loginRegister.checkIfAdmin, (req, res) => {
+  
+  res.redirect('back');
+});
+
 //Login and Register routes
 app.use("/", require("./routes/loginRegisterRoutes"));
 
