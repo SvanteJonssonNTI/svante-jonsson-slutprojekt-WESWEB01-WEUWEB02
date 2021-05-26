@@ -78,6 +78,11 @@ app.post("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
   }
 });
 
+app.post("/addToCart", async (req, res) => {
+  userCart.addProductToCart(await req._passport.session.user, await req.body.productName, await req.body.productAmount, await req.body.productPrice)
+  res.redirect('back');
+});
+
 //Login and Register routes
 app.use("/", require("./routes/loginRegisterRoutes"));
 

@@ -25,6 +25,9 @@ const UserSchema = new mongoose.Schema({
     amountOfProduct: {
       type: Number,
     },
+    priceOfOne: {
+      type: Number,
+    },
   },
 });
 

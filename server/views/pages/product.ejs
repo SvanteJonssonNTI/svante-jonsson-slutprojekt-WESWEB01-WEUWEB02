@@ -30,6 +30,16 @@
                         </div>
                         <div class="card-text"><%= product.description %></div>
                         <div class="cart-text text-muted">Antal i lager: <%= product.stock %> </div>
+                        <% if (user != null) { %>
+                            <form action="/addToCart" method="post">
+                                <input type="text" name="productName" value="<%= product.name %>" hidden>
+                                <input type="text" name="productPrice" value="<%= product.price %>" hidden>
+                                <input type="text" name="productAmount" value="2" hidden>
+                                <input type="submit" value="lägg till" />
+                            </form>
+                        <% } %>
+
+                        
                     </div>
                 </div>
             </div>
