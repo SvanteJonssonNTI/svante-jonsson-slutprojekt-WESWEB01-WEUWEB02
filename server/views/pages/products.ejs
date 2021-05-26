@@ -18,7 +18,7 @@
             <div class="container d-flex justify-content-center">
                 <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 col-11 col-md-7">
                     <div class="input-group">
-                        <input type="search" placeholder="Vad önskas?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                        <input type="search" placeholder="Vad önskas?" aria-describedby="button-addon1" class="form-control border-0 bg-light" id="searchbar">
                         <div class="input-group-append">
                             <button id="button-addon1" type="submit" class="btn btn-link text-decoration-none d-flex justify-content-center align-items-center">
                                 <span class="material-icons text-muted">
@@ -55,6 +55,9 @@
             </div>
         </div>
     </div>
+    <script>
+        let search = document.getElementById('searchbar').innerHTML
+    </script>
 </body>
 
 </html>
