@@ -15,3 +15,12 @@ window.onload = function addClearFunction(){
     }
   });
 }
+
+window.onload = function addRemoveFunction(){
+  $('body').on('shown.bs.popover', function () {
+    var btn = document.getElementsByClassName("removeFromCart");
+    for (var i=0; i < btn.length; i++) {
+      btn[i].setAttribute("onclick", "removeFromCart()")
+    }
+  });
+}
