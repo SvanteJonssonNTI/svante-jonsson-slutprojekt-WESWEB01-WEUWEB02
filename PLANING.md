@@ -36,11 +36,7 @@ Databasens uppgift är alltså att hålla koll alla tillgängliga produkter och 
 
 ## Wireframes
 
-### Startsida
-telefon https://wireframe.cc/s51UGT
-dator https://wireframe.cc/dOVhKD
-
-### osv
+<a href="https://github.com/SvanteJonssonSchool/svante-jonsson-slutprojekt-WESWEB01-WEUWEB02/tree/main/planingFiles/wireframes">Tryck här</a>
 
 ## Målgrupp & Persona 
 
