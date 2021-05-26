@@ -11,8 +11,6 @@
 </head>
 
 <body>
-    <button onclick="addToCart()">tjo</button>
-    <button onclick="clearCart()">bre</button>
     <%- include('../partials/navbar.ejs') %>
 
     <div class="container my-5">
@@ -58,9 +56,9 @@
         const input = document.getElementById('searchbar');
         let products = document.getElementsByClassName('card')
 
-        input.addEventListener('input', updateSearch);
+        input.addEventListener('input', updateValue);
 
-        function updateSearch(e) {
+        function updateValue(e) {
             search(e.target.value)
         }
 
