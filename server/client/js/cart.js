@@ -11,10 +11,11 @@ function addToCart()
         cart.push(data);
     } else {
         for (let i = 0; i < cart.length; i++) {
+            console.log(cart)
             const element = cart[i];
             if(element.name == data.name){
                 element.amount += data.amount
-                cart[i].push(element) //new amount is inserted (this is currently not working)
+                cart[i] = element //new amount is inserted
             }
         }
     }
