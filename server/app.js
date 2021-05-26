@@ -48,6 +48,11 @@ app.get("/product", async (req, res) => {
   res.render("pages/product", {user: user, product: product});
 });
 
+app.get("/aboutUs", async (req, res) => {
+  let user = await req.user;
+  res.render("pages/aboutUs", {user: user});
+});
+
 //POST
 app.post("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
   checkedName = products.checkText(req.body.name, 15);
