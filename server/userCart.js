@@ -4,8 +4,8 @@ const User = require("./models/User");
 const ObjectID = require("mongodb").ObjectID;
 
 //Function adds an item to the cart
-exports.addProductToCart = async (userID, productNameIN, amountOfProductIN) => {
-  let tmp = { productName: productNameIN, amountOfProduct: amountOfProductIN };
+exports.addProductToCart = async (userID, productNameIN, amountOfProductIN, priceOfProductIN) => {
+  let tmp = { productName: productNameIN, amountOfProduct: amountOfProductIN, priceOfOne: priceOfProductIN };
   await User.updateOne({ _id: ObjectID(userID) }, { $push: { cart: tmp } });
 };
 
