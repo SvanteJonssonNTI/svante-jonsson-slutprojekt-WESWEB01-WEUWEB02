@@ -7,7 +7,7 @@ var popover = new bootstrap.Popover(popoverBtn, {
   content: document.getElementById("popover-content").innerHTML
 });
 
-window.onload = function addClearFunction(){
+function addClearFunction(){
   $('body').on('shown.bs.popover', function () {
     var btn = document.getElementsByClassName("clearCart");
     for (var i=0; i < btn.length; i++) {
@@ -16,7 +16,7 @@ window.onload = function addClearFunction(){
   });
 }
 
-window.onload = function addRemoveFunction(){
+function addRemoveFunction(){
   $('body').on('shown.bs.popover', function () {
     var btn = document.getElementsByClassName("removeFromCart");
     for (var i=0; i < btn.length; i++) {
@@ -24,3 +24,8 @@ window.onload = function addRemoveFunction(){
     }
   });
 }
+
+window.onload = function(){
+  addClearFunction();
+  addRemoveFunction();
+  }
