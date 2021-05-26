@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <%- include('../partials/globalImports.ejs') %>
+	    <link rel="stylesheet" href="style/product.css">
+
+    </head>
+    <body>
+        <%- include('../partials/navbar.ejs') %>
+
+        <div class="mx-auto mt-5 col-10 col-md-8">
+            <div class="d-flex flex-wrap">
+                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center my-3 mx-auto">
+                    <img
+                        src="<%= product.imgURL %>"
+                        alt="Product Image"
+                        class="img-fluid w-75"
+                    />
+                </div>
+                <div class="col-12 col-md-6 d-flex flex-column align-items-start mx-auto ps-5">
+                    <div class="card-body w-100 h-100">
+                        <h1 class="card-title my-3 fw-bold"><%= product.name %></h1>
+                        <div class="card-text text-muted fs-6 mb-5"><%= product.description %></div>
+                        <div class="card-subtitle fs-4 mb-3">
+                            <b> <%= product.price %> kr </b>
+                        </div>
+                        <div class="cart-text my-5" id="stock">Antal i lager: <%= product.stock %> </div>
+                        <% if (user != null) { %>
+                            <form class="my-5" action="/addToCart" method="post">
+                                <input type="text" name="productName" id="productName" value="<%= product._id %>" hidden>
+                                <input type="text" name="productAmount" id="productAmount" value="1" hidden>
+                                <input type="text" name="productAmount" id="productPrice" value="<%= product.price %>" hidden>
+                                <table class="col-10 col-md-5 mr-auto">
+                                    <tbody>
+                                        <tr class="d-flex mb-2">
+                                            <td class="col-4">
+                                                <a class="btn btn-danger material-icons col-12 ms-auto"
+                                                    onclick="amountOf(-1, this)">remove</a>
+                                            </td>
+                                            <td class="d-flex flex-column align-items-center justify-content-center col-3 border rounded mx-auto">
+                                                1
+                                            </td>
+                                            <td class="col-4">
+                                                <a class="btn btn-success material-icons col-12 me-auto"
+                                                    onclick="amountOf(1, this)">add</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" class="col-2 ms-auto">
+                                                <button class="btn btn-outline-dark col-12 me-auto d-flex justify-content-center align-items-center" type="submit" onclick="addToCartInit()">
+                                                    <span class="material-icons me-1">
+                                                        shopping_cart
+                                                    </span>
+                                                    Lägg i kundvagnen
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function amountOf(input, element) {
+            amount = element.parentElement.parentElement.children[1]
+            stock = document.getElementById('stock').innerHTML.substring(15) //leaves only the number
+            if (parseInt(amount.innerHTML) == null || parseInt(amount.innerHTML) <= 1 && input == -1) return null //limits user from choosíng less than one item
+            if (parseInt(amount.innerHTML) == parseInt(stock) && input == 1) return null //Limits amount based on stock
+            amount.innerHTML = parseInt(amount.innerHTML) + input //changes the visible number
+            document.getElementById("productAmount").value = amount.innerHTML //adds the amount of products to the future post request
+        }
+        function addToCartInit() { //used to send values to the addToCart() function
+            let name = document.getElementById('productName').value
+            let amount = document.getElementById("productAmount").value
+            let price = document.getElementById("productPrice").value
+            addToCart({name, amount, price})
+        }
+    </script>
+</html>

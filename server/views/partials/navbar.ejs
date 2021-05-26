@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="col-lg-4 col-12 d-flex justify-content-between">
+            <a class="navbar-brand fw-bold" href="/">CandleZilla</a>
+            <button class="navbar-toggler d-inline d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse col-sm-4 justify-content-center" id="navbarContent">
+            <ul class="navbar-nav justify-content-around flex-fill">
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Produkter</a>
+                </li>
+                <% if (user && user.admin) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/addProduct">Lägg till produkter</a><!--Endast för admins-->
+                </li>
+                <% } %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutUs">Om oss</a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse col-sm-4 justify-content-center" id="navbarContent">
+            <ul class="navbar-nav justify-content-end flex-fill">
+                <li class="nav-item">
+                    <a class="nav-link" id="btn-popover" role="button" data-bs-toggle="popover">
+                        <span class="material-icons"> shopping_cart </span>
+                    </a>
+                </li>
+                <li class="nav-item my-auto">
+                    <% if (user) { %>
+                    <a href="/logout" class="nav-link">
+                        <span class="material-icons"> logout </span>
+                    </a>
+                    <% } else { %>
+                    <a href="/login" class="nav-link">
+                        <span class="material-icons"> login </span>
+                    </a>
+                    <% } %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<%- include('../partials/cart.ejs') %>

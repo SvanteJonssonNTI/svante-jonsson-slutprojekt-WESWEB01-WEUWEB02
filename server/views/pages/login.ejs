@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<%- include('../partials/globalImports.ejs') %> 
+
+	<link rel="stylesheet" href="style/loginRegister.css">
+</head>
+<body class="background">
+    <%- include('../partials/navbar.ejs') %>
+	
+	<form class="col-10 col-md-4 mx-auto d-block d-flex flex-column justify-content-center p-4 rounded" action="/login" method="POST">
+		<legend class="text-center"><b>Logga in</b></legend>
+		<div class="mb-4">
+			<label for="email" class="form-label">
+				<b>Email</b>
+			</label>
+			<input type="email" class="form-control" id="email" name="email" placeholder="user@example.com" autofocus required>
+		</div>
+		<div class="mb-4">
+			<label for="password" class="form-label">
+				<b>Password</b>
+			</label>
+			<input type="password" class="form-control" id="password" name="password" placeholder="Lösenord" required>
+		</div>
+		<div>
+			<p>
+				<small>
+					Har du inte ett konto?
+					<a href="/register">Tryck här!</a>
+				</small> 
+			</p>
+		</div>
+		<button type="submit" class="btn btn-primary w-50 mx-auto mt-2 btnColor" >Logga in</button>
+	</form>
+</body>
+</html>
