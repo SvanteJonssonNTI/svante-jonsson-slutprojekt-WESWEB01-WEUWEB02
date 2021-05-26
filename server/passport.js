@@ -5,7 +5,7 @@ const session = require("express-session");
 const methodOverride = require("method-override");
 const MongoStore = require("connect-mongo");
 
-exports.init = (app) => {
+exports.init = (app) => { //intializes passport
   app.use(flash());
   app.use(
     session({

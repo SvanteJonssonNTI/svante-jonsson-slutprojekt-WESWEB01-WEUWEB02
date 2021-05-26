@@ -59,7 +59,7 @@ app.post("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
   checkedURL = products.checkImgURL(req.body.imgURL);
   checkedPrice = products.checkPrice(req.body.price);
   checkedStock = products.checkStock(req.body.stock);
-  if (
+  if (  //if any equals -1, an invalid input has been inputted
     checkedName == -1 ||
     checkedDescription == -1 || 
     checkedURL == -1 ||

@@ -6,11 +6,11 @@ db.once('open', function () {
     //Connected
 });
 
-exports.connectToMongoose = (collection) =>{
+exports.connectToMongoose = (collection) =>{ //connects to mongoDB with inputted collection name
   mongoose.connect(`mongodb://localhost/${collection}`, { useNewUrlParser: true, useUnifiedTopology: true });
 }
 
-exports.saveToMongoose = (model) => {
+exports.saveToMongoose = (model) => { //saves model to mongoDB
   model.save(()=>{
     console.log("Input successfully saved to database")
   })

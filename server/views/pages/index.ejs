@@ -49,13 +49,4 @@
     </div>
     <%- include('../partials/footer.ejs') %>
 </body>
-<script>
-    function amountOf(input, element) {
-        amount = element.parentElement.parentElement.children[1]
-        if (parseInt(amount.innerHTML) == null || parseInt(amount.innerHTML) <= 0 && input == -1) return null
-        if (parseInt(amount.innerHTML) == null) return null //TODO, will check stock cap
-        amount.innerHTML = parseInt(amount.innerHTML) + input
-    }
-</script>
-
 </html>

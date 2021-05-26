@@ -53,10 +53,11 @@
         </div>
     </div>
     <script>
+        //Sad attempt at search function, works if a valid name is pasted in search bar after page reload
         const input = document.getElementById('searchbar');
         let products = document.getElementsByClassName('card')
 
-        input.addEventListener('input', updateSearch);
+        input.addEventListener('input', updateSearch); //runs everytime input changes
 
         function updateSearch(e) {
             search(e.target.value)
@@ -65,7 +66,7 @@
         function search(input) {
             for (let i = 0; i < products.length; i++) {
                 let element = products[i];
-                let productName = element.children[1].children[0].innerText
+                let productName = element.children[1].children[0].innerText //name of product
                 if (productName.toUpperCase() != input.toUpperCase()) {
                     element.style.display='none' 
                 } else {

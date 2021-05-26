@@ -78,7 +78,7 @@
             amount.innerHTML = parseInt(amount.innerHTML) + input //changes the visible number
             document.getElementById("productAmount").value = amount.innerHTML //adds the amount of products to the future post request
         }
-        function addToCartInit() {
+        function addToCartInit() { //used to send values to the addToCart() function
             let name = document.getElementById('productName').value
             let amount = document.getElementById("productAmount").value
             let price = document.getElementById("productPrice").value

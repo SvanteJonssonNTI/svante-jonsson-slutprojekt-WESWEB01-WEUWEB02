@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
   },
   admin: {
     type: Boolean,
-    default: false,
+    default: true, //for Niklas and Herman
   },
   cart: {
     productName: {

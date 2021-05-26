@@ -1,6 +1,6 @@
 
 var popoverBtn = document.getElementById("btn-popover");
-var popover = new bootstrap.Popover(popoverBtn, {
+var popover = new bootstrap.Popover(popoverBtn, { //popover is created and options is set
   placement: "bottom",
   html: true,
   container: 'body',
@@ -8,7 +8,7 @@ var popover = new bootstrap.Popover(popoverBtn, {
 });
 
 function addClearFunction(){
-  $('body').on('shown.bs.popover', function () {
+  $('body').on('shown.bs.popover', function () { //once shown.bs.popover exists, clearCart() is added to all buttons with clearCart className
     var btn = document.getElementsByClassName("clearCart");
     for (var i=0; i < btn.length; i++) {
       btn[i].setAttribute("onclick", "clearCart()")
@@ -17,7 +17,7 @@ function addClearFunction(){
 }
 
 function addRemoveFunction(){
-  $('body').on('shown.bs.popover', function () {
+  $('body').on('shown.bs.popover', function () { //once shown.bs.popover exists, removeFromCart() is added to all buttons with removeFromCart className
     var btn = document.getElementsByClassName("removeFromCart");
     for (var i=0; i < btn.length; i++) {
       btn[i].setAttribute("onclick", "removeFromCart()")
