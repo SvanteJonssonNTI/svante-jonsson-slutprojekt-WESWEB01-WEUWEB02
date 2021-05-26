@@ -9,7 +9,7 @@ function addToCart(data)
         for (let i = 0; i < cart.length; i++) {
             const element = cart[i];
             if(element.name == data.name){
-                element.amount += data.amount
+                element.amount = parseInt(element.amount) + parseInt(data.amount)
                 cart[i] = element //new amount is inserted
                 exists = true;
                 break;
