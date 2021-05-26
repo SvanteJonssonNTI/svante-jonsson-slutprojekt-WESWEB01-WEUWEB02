@@ -8,7 +8,6 @@ module.exports = (function () {
   const db = require("../dbModule");
   const loginRegister = require("../loginRegister");
   const passport = require("../passport").passport;
-  const userCart = require("../userCart");
   const User = require("../models/User");
 
   //ROUTES

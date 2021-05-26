@@ -5,7 +5,6 @@ const express = require("express");
 const db = require("./dbModule");
 const loginRegister = require("./loginRegister");
 const products = require("./product");
-const userCart = require("./userCart");
 const passport = require("./passport");
 
 //Variable Initialize
@@ -81,11 +80,6 @@ app.post("/addProduct", loginRegister.checkIfAdmin, (req, res) => {
       )
     );
   }
-});
-
-app.post("/addToCart", async (req, res) => {
-  userCart.addProductToCart(await req._passport.session.user, await req.body.productName, await req.body.productAmount, await req.body.productPrice)
-  res.redirect('back');
 });
 
 //Login and Register routes
