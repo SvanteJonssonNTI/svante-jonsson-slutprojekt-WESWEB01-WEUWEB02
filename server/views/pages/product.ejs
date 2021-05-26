@@ -32,7 +32,7 @@
                         <div class="cart-text my-5" id="stock">Antal i lager: <%= product.stock %> </div>
                         <% if (user != null) { %>
                             <form class="my-5" action="/addToCart" method="post">
-                                <input type="text" name="productName" id="productName" value="<%= product.name %>" hidden>
+                                <input type="text" name="productName" id="productName" value="<%= product._id %>" hidden>
                                 <input type="text" name="productAmount" id="productAmount" value="1" hidden>
                                 <input type="text" name="productAmount" id="productPrice" value="<%= product.price %>" hidden>
                                 <table class="col-10 col-md-5 mr-auto">
