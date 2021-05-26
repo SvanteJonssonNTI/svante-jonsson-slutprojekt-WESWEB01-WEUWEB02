@@ -25,53 +25,27 @@
 
     <div class="my-3 mx-3">
         <h1>Populära produkter</h1>
-    <div class="row d-flex justify-content-around mx-auto">
-        <% for( let i = 0; i < products.length; i++ ) { %>
-            <% if (i%1 == 0) { %>
-             <div class="w-100 d-block d-md-none"></div>
+        <div class="row justify-content-center flex-wrap">
+            <% for( let i = 0; i < 4; i++ ) { %>
+                <!--Card-->
+                <div class="card col-8 col-md-2 shadow pl-0 pr-0 info-card text-center mx-3 my-3">
+                    <!--Card img-->
+                    <img src="./img/nedladdning.jpg" class="card-img-top w-75 mx-auto mt-2 bg-primary">
+                    <!--Card body-->
+                    <div class="card-body">
+                        <p class="card-title fw-bold"><%= products[i].name %> </p>
+                        <p class="card-text"><%= products[i].price %> SEK </p>
+                        <a href="/product?product=<%- products[i]._id %> " class="btn btn-danger stretched-link d-flex align-items-center justify-content-center">
+                            <span class="material-icons me-1">
+                                shopping_cart
+                            </span>
+                            Lägg i kundvagn
+                        </a>
+                        
+                    </div>
+                </div>
             <% } %>
-            <% if (i%4 == 0) { %>
-             <div class="w-100 d-none d-md-block"></div>
-            <% } %>
-        <!--Card-->
-        <div class="card col-8 col-md-2 shadow pl-0 pr-0 info-card text-center">
-            <!--Card img-->
-            <img src="./img/nedladdning.jpg" class="card-img-top w-75 mx-auto mt-2 bg-primary">
-            <!--Card body-->
-            <div class="card-body">
-                <p class="card-title font-weight-bold"><%= products[i].name %> </p>
-                <p class="card-text lh-lg">
-                    <%= products[i].description %> 
-                </p>
-                <a href="#" class="btn btn-danger d-block d-md-none stretched-link">Köp produkten</a>
-                <table class="col-10 mx-auto d-none d-md-block">
-                    <tbody>
-                        <tr class="d-flex">
-                            <td class="flex-fill">
-                                <a class="btn btn-danger material-icons flex-fill ms-auto"
-                                    onclick="amountOf(-1, this)">remove</a>
-                            </td>
-                            <td class="flex-fill d-flex flex-column align-items-center justify-content-center">
-                                1
-                            </td>
-                            <td class="flex-fill">
-                                <a class="btn btn-success material-icons flex-fill me-auto"
-                                    onclick="amountOf(1, this)">add</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="flex-fill">
-                                <a class="btn btn-outline-dark flex-fill me-auto">
-                                    Lägg i kundvagnen
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
-        <% } %>
-    </div>
     </div>
     
 </body>
