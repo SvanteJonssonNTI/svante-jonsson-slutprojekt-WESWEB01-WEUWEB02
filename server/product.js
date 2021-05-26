@@ -46,7 +46,7 @@ exports.checkStock = (stockIN) => {
     if(isNumber(stockIN)){ //checks if input is a integer
         if(stockIN > 0 && stockIN % 1 == 0){
             return stockIN
-        } else { //If price is 0 or below or not a whole number, -1 is returned to indicate a invalid stock amount
+        } else { //If stock is 0 or below or not a whole number, -1 is returned to indicate a invalid stock amount
             return -1 
         }
     } else {
