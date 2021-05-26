@@ -32,9 +32,9 @@
                         <div class="cart-text my-5" id="stock">Antal i lager: <%= product.stock %> </div>
                         <% if (user != null) { %>
                             <form class="my-5" action="/addToCart" method="post">
-                                <input type="text" name="productName" value="<%= product.name %>" hidden>
-                                <input type="text" name="productPrice" value="<%= product.price %>" hidden>
+                                <input type="text" name="productName" id="productName" value="<%= product.name %>" hidden>
                                 <input type="text" name="productAmount" id="productAmount" value="1" hidden>
+                                <input type="text" name="productAmount" id="productPrice" value="<%= product.price %>" hidden>
                                 <table class="col-10 col-md-5 mr-auto">
                                     <tbody>
                                         <tr class="d-flex mb-2">
@@ -52,7 +52,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="3" class="col-2 ms-auto">
-                                                <button class="btn btn-outline-dark col-12 me-auto d-flex justify-content-center align-items-center" type="submit">
+                                                <button class="btn btn-outline-dark col-12 me-auto d-flex justify-content-center align-items-center" type="submit" onclick="addToCartInit()">
                                                     <span class="material-icons me-1">
                                                         shopping_cart
                                                     </span>
@@ -77,6 +77,12 @@
             if (parseInt(amount.innerHTML) == parseInt(stock) && input == 1) return null //Limits amount based on stock
             amount.innerHTML = parseInt(amount.innerHTML) + input //changes the visible number
             document.getElementById("productAmount").value = amount.innerHTML //adds the amount of products to the future post request
+        }
+        function addToCartInit() {
+            let name = document.getElementById('productName').value
+            let amount = document.getElementById("productAmount").value
+            let price = document.getElementById("productPrice").value
+            addToCart({name, amount, price})
         }
     </script>
 </html>
