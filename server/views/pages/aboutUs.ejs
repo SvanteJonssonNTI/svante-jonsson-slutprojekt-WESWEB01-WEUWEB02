@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+	<%- include('../partials/globalImports.ejs') %> 
+    <link rel="stylesheet" href="style/aboutUs.css">
 </head>
-<body>
-    
+<body class="background">
+    <%- include('../partials/navbar.ejs') %>
+
+    <div class="container text-center text-white textBackground p-5">
+        <h1 class="display-2 p-5">
+            CandleZilla
+        </h1>
+        <p class="fs-4 mx-auto w-50">
+            Ljus för alla. Sedan sommaren 1969 har vi fått miljontals människors hem att lukta gott. 
+            Hos oss finns ljus som inspirerar äventyr, musik, lugn, och vackra dofter från alla årets årstider.
+        </p>
+    </div>
 </body>
 </html>
