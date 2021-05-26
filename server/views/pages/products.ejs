@@ -20,7 +20,7 @@
                     <div class="input-group">
                         <input type="search" placeholder="Vad önskas?" aria-describedby="button-addon1" class="form-control border-0 bg-light" id="searchbar">
                         <div class="input-group-append">
-                            <button id="button-addon1" onclick="search()" class="btn btn-link text-decoration-none d-flex justify-content-center align-items-center">
+                            <button id="button-addon1" class="btn btn-link text-decoration-none d-flex justify-content-center align-items-center">
                                 <span class="material-icons text-muted">
                                     search
                                 </span>
@@ -53,42 +53,24 @@
         </div>
     </div>
     <script>
-        /*
-        let search = document.getElementById('searchbar').value
-
+        const input = document.getElementById('searchbar');
         let products = document.getElementsByClassName('card')
 
-        for (let i = 0; i < products.length; i++) {
-            let element = products[i];
-            let productName = element.children[1].children[0].innerHTML
-            console.log("search: " + search)
-            console.log("product: " + productName)
+        input.addEventListener('input', updateValue);
 
-            console.log("Är dom lika?")
-            console.log(search.toUpperCase() == productName.toUpperCase())
-            console.log()
+        function updateValue(e) {
+            search(e.target.value)
+        }
 
-            if (search.toUpperCase() == productName.toUpperCase()) {
-                element.style.visibility='hidden' 
-            } else{
-                element.style.visibility='visible' 
-            }
-        }*/
-        function search() {
-            let search = document.getElementById('searchbar').value
-
-            console.log("testGubbe" == search)
-            let products = document.getElementsByClassName('card')
-
+        function search(input) {
             for (let i = 0; i < products.length; i++) {
-                const element = products[i];
+                let element = products[i];
                 let productName = element.children[1].children[0].innerText
-                if (search.toUpperCase() != productName.toUpperCase()) {
-                    element.style.display = 'none'
-                } else{
-                    element.style.display='block' 
+                if (productName.toUpperCase() != input.toUpperCase()) {
+                    element.style.display='none' 
+                } else {
+                    element.style.display = 'block'
                 }
-                
             }
         }
     </script>
