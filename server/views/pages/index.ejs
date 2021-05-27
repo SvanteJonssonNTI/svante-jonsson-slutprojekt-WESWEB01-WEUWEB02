@@ -26,11 +26,12 @@
     <div class="my-3 mx-3">
         <h1>Populära produkter</h1>
         <div class="row justify-content-center flex-wrap">
+            <% if (products.length > 0) { %>
             <% for( let i = 0; i < 4; i++ ) { %>
                 <!--Card-->
                 <div class="card col-8 col-md-2 shadow pl-0 pr-0 info-card text-center mx-3 my-3">
                     <!--Card img-->
-                    <img src="./img/nedladdning.jpg" class="card-img-top w-75 mx-auto mt-2 bg-primary">
+                    <img src="<%= products[i].imgURL %>" class="card-img-top w-75 mx-auto mt-2 bg-primary">
                     <!--Card body-->
                     <div class="card-body">
                         <p class="card-title fw-bold"><%= products[i].name %> </p>
@@ -44,6 +45,7 @@
                         
                     </div>
                 </div>
+            <% } %>
             <% } %>
         </div>
     </div>
